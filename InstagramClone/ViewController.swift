@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -42,6 +44,7 @@ class ViewController: UIViewController {
         tf.borderStyle = .roundedRect
         tf.isSecureTextEntry = true
         tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -57,14 +60,16 @@ class ViewController: UIViewController {
         
         button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         
+        button.isEnabled = false
+        
         return button
     }()
 
     @objc func handleSignUp() {
         
-        guard let email = emailTextField.text else { return }
-        guard let username = userNameTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
+        guard let email = emailTextField.text, !email.isEmpty else { return }
+        guard let username = userNameTextField.text, !username.isEmpty else { return }
+        guard let password = passwordTextField.text, !password.isEmpty else { return }
         
         Auth.auth().createUser(withEmail: email, password: password) { (user: User?, error: Error?) in
             
@@ -74,6 +79,19 @@ class ViewController: UIViewController {
             }
             
             print("successfully created user:", user?.uid ?? "")
+        }
+    }
+    
+    @objc func handleTextInputChange() {
+        let isFormValid = emailTextField.text?.count ?? 0 > 0 &&
+            userNameTextField.text?.count ?? 0 > 0 &&
+            passwordTextField.text?.count ?? 0 > 0
+        if isFormValid {
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+        } else {
+            signUpButton.isEnabled = false 
+            signUpButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
         }
     }
     

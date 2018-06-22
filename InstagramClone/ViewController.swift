@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }()
     
     let signUpButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("Sign up", for: .normal)
         
         button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
@@ -53,9 +53,16 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
+        
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        
         return button
     }()
 
+    @objc func handleSignUp() {
+        print("123")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

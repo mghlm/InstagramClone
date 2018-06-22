@@ -14,6 +14,7 @@
 		CCA2474E20DD01050007B0A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA2474C20DD01050007B0A1 /* LaunchScreen.storyboard */; };
 		CCA2475920DD01050007B0A1 /* InstagramCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2475820DD01050007B0A1 /* InstagramCloneTests.swift */; };
 		CCA2476420DD01050007B0A1 /* InstagramCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2476320DD01050007B0A1 /* InstagramCloneUITests.swift */; };
+		CCA2477320DD1E810007B0A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2477220DD1E810007B0A1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CCA2475F20DD01050007B0A1 /* InstagramCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA2476320DD01050007B0A1 /* InstagramCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneUITests.swift; sourceTree = "<group>"; };
 		CCA2476520DD01050007B0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCA2477220DD1E810007B0A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		CCA2474220DD01030007B0A1 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				CCA2477120DD1E740007B0A1 /* Utils */,
 				CCA2474320DD01030007B0A1 /* AppDelegate.swift */,
 				CCA2474520DD01030007B0A1 /* ViewController.swift */,
 				CCA2474720DD01030007B0A1 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				CCA2476520DD01050007B0A1 /* Info.plist */,
 			);
 			path = InstagramCloneUITests;
+			sourceTree = "<group>";
+		};
+		CCA2477120DD1E740007B0A1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CCA2477220DD1E810007B0A1 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA2474620DD01030007B0A1 /* ViewController.swift in Sources */,
+				CCA2477320DD1E810007B0A1 /* Extensions.swift in Sources */,
 				CCA2474420DD01030007B0A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

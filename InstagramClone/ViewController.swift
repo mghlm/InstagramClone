@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -60,7 +61,20 @@ class ViewController: UIViewController {
     }()
 
     @objc func handleSignUp() {
-        print("123")
+        
+        guard let email = emailTextField.text else { return }
+        guard let username = userNameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (user: User?, error: Error?) in
+            
+            if let error = error {
+                print("failed to create user:", error)
+                return
+            }
+            
+            print("successfully created user:", user?.uid ?? "")
+        }
     }
     
     override func viewDidLoad() {

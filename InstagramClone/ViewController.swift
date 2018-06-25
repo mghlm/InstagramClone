@@ -99,7 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         Auth.auth().createUser(withEmail: email, password: password) { (user: User?, error: Error?) in
             
             if let error = error {
-                print("failed to create user:", error)
+                print("failed to create user:", error.localizedDescription)
                 return
             }
             print("successfully created user:", user?.uid ?? "")
@@ -107,37 +107,39 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             guard let image = self.plusPhotoButton.imageView?.image else { return }
             guard let uploadData = UIImageJPEGRepresentation(image, 0.5) else { return }
             
+            let filename = NSUUID().uuidString
+            
             let storageReference = Storage.storage().reference()
-            let storageReferenceChild = storageReference.child("profile_image")
+            let storageReferenceChild = storageReference.child("profile_images").child(filename)
             
             storageReferenceChild.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                 if let error = error {
-                    print("Failed to upload profile image:", error)
+                    print("Failed to upload profile image:", error.localizedDescription)
                     return
                 }
                 
                 storageReferenceChild.downloadURL(completion: { (url, error) in
                     if let error = error {
-                        print("Failed to retrieve URL:", error)
+                        print("Failed to retrieve URL:", error.localizedDescription)
                         return
                     }
                     let profileImageUrl = url?.absoluteString
                     print("Profile image successfully uploaded into storage with url: \(profileImageUrl ?? "")")
+                    
+                    guard let uid = user?.uid else { return }
+                    let dictionaryValues = ["username": username, "profileImageUrl": profileImageUrl]
+                    let values = [uid: dictionaryValues]
+                    
+                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (error, reference) in
+                        if let error = error {
+                            print("Failed to save user info into DB:", error)
+                            return
+                        }
+                        
+                        print("Successfully saved user info int DB")
+                    })
                 })
             })
-            
-//            guard let uid = user?.uid else { return }
-//            let usernameValues = ["username": username]
-//            let values = [uid: usernameValues]
-//
-//            Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (error, reference) in
-//                if let error = error {
-//                    print("Failed to save user info into DB:", error)
-//                    return
-//                }
-//
-//                print("Successfully saved user info int DB")
-//            })
         }
     }
     

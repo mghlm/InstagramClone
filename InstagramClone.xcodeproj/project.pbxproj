@@ -10,6 +10,8 @@
 		7386FFDE6040968C3434762B /* Pods_InstagramCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49848B9242C83E47D76FBFF3 /* Pods_InstagramCloneUITests.framework */; };
 		9E6A01FB16A980682BB31447 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB686666E252E086EA136B /* Pods_InstagramClone.framework */; };
 		CA6444D25A993855BAA63FE7 /* Pods_InstagramCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB29845CEBEC9FA94BF52346 /* Pods_InstagramCloneTests.framework */; };
+		CC1673C920E13F0700667B3D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1673C820E13F0700667B3D /* MainTabBarController.swift */; };
+		CC1673CB20E1407D00667B3D /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1673CA20E1407D00667B3D /* UserProfileController.swift */; };
 		CCA2474420DD01030007B0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2474320DD01030007B0A1 /* AppDelegate.swift */; };
 		CCA2474620DD01030007B0A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2474520DD01030007B0A1 /* ViewController.swift */; };
 		CCA2474920DD01030007B0A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA2474720DD01030007B0A1 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		91CCA2D612F08BA8AAF17832 /* Pods-InstagramCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramCloneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramCloneTests/Pods-InstagramCloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC125711B01E90EE7D05DBCB /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		CBA80100EF05504A72449249 /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
+		CC1673C820E13F0700667B3D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CC1673CA20E1407D00667B3D /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		CCA2474020DD01030007B0A1 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA2474320DD01030007B0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA2474520DD01030007B0A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,12 +137,14 @@
 			children = (
 				CCA2477120DD1E740007B0A1 /* Utils */,
 				CCA2474320DD01030007B0A1 /* AppDelegate.swift */,
+				CC1673C820E13F0700667B3D /* MainTabBarController.swift */,
 				CCA2474520DD01030007B0A1 /* ViewController.swift */,
 				CCA2474720DD01030007B0A1 /* Main.storyboard */,
 				CCA2474A20DD01050007B0A1 /* Assets.xcassets */,
 				CCA2474C20DD01050007B0A1 /* LaunchScreen.storyboard */,
 				CCA2474F20DD01050007B0A1 /* Info.plist */,
 				CCA2477420DD2AE70007B0A1 /* GoogleService-Info.plist */,
+				CC1673CA20E1407D00667B3D /* UserProfileController.swift */,
 			);
 			path = InstagramClone;
 			sourceTree = "<group>";
@@ -398,6 +404,8 @@
 			files = (
 				CCA2474620DD01030007B0A1 /* ViewController.swift in Sources */,
 				CCA2477320DD1E810007B0A1 /* Extensions.swift in Sources */,
+				CC1673C920E13F0700667B3D /* MainTabBarController.swift in Sources */,
+				CC1673CB20E1407D00667B3D /* UserProfileController.swift in Sources */,
 				CCA2474420DD01030007B0A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,7 +583,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF28856VV6;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnusholm.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -591,7 +602,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF28856VV6;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnusholm.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -608,7 +622,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF28856VV6;
 				INFOPLIST_FILE = InstagramCloneTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnusholm.InstagramCloneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -626,7 +644,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF28856VV6;
 				INFOPLIST_FILE = InstagramCloneTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnusholm.InstagramCloneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -643,7 +665,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF28856VV6;
 				INFOPLIST_FILE = InstagramCloneUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnusholm.InstagramCloneUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -660,7 +686,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF28856VV6;
 				INFOPLIST_FILE = InstagramCloneUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnusholm.InstagramCloneUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

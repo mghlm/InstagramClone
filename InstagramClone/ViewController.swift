@@ -181,8 +181,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         stackView.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 200)
         
     }
-
-
 }
 
 extension UIView {

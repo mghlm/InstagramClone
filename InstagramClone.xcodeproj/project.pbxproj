@@ -12,6 +12,7 @@
 		CA6444D25A993855BAA63FE7 /* Pods_InstagramCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB29845CEBEC9FA94BF52346 /* Pods_InstagramCloneTests.framework */; };
 		CC1673C920E13F0700667B3D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1673C820E13F0700667B3D /* MainTabBarController.swift */; };
 		CC1673CB20E1407D00667B3D /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1673CA20E1407D00667B3D /* UserProfileController.swift */; };
+		CC590BBC20EB74F6002F6058 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC590BBB20EB74F6002F6058 /* UserProfileHeader.swift */; };
 		CCA2474420DD01030007B0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2474320DD01030007B0A1 /* AppDelegate.swift */; };
 		CCA2474620DD01030007B0A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2474520DD01030007B0A1 /* ViewController.swift */; };
 		CCA2474920DD01030007B0A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA2474720DD01030007B0A1 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		CBA80100EF05504A72449249 /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
 		CC1673C820E13F0700667B3D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CC1673CA20E1407D00667B3D /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		CC590BBB20EB74F6002F6058 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		CCA2474020DD01030007B0A1 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA2474320DD01030007B0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA2474520DD01030007B0A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CC590BBA20EB74E7002F6058 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CC1673CA20E1407D00667B3D /* UserProfileController.swift */,
+				CC590BBB20EB74F6002F6058 /* UserProfileHeader.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
 		CCA2473720DD01030007B0A1 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +146,7 @@
 		CCA2474220DD01030007B0A1 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				CC590BBA20EB74E7002F6058 /* UserProfile */,
 				CCA2477120DD1E740007B0A1 /* Utils */,
 				CCA2474320DD01030007B0A1 /* AppDelegate.swift */,
 				CC1673C820E13F0700667B3D /* MainTabBarController.swift */,
@@ -144,7 +156,6 @@
 				CCA2474C20DD01050007B0A1 /* LaunchScreen.storyboard */,
 				CCA2474F20DD01050007B0A1 /* Info.plist */,
 				CCA2477420DD2AE70007B0A1 /* GoogleService-Info.plist */,
-				CC1673CA20E1407D00667B3D /* UserProfileController.swift */,
 			);
 			path = InstagramClone;
 			sourceTree = "<group>";
@@ -405,6 +416,7 @@
 				CCA2474620DD01030007B0A1 /* ViewController.swift in Sources */,
 				CCA2477320DD1E810007B0A1 /* Extensions.swift in Sources */,
 				CC1673C920E13F0700667B3D /* MainTabBarController.swift in Sources */,
+				CC590BBC20EB74F6002F6058 /* UserProfileHeader.swift in Sources */,
 				CC1673CB20E1407D00667B3D /* UserProfileController.swift in Sources */,
 				CCA2474420DD01030007B0A1 /* AppDelegate.swift in Sources */,
 			);

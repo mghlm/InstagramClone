@@ -118,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				CC05D08B20F3EBEC0095DC52 /* LoginViewController.swift */,
+				CCA2474520DD01030007B0A1 /* SignUpController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -161,7 +162,6 @@
 				CCA2477120DD1E740007B0A1 /* Utils */,
 				CCA2474320DD01030007B0A1 /* AppDelegate.swift */,
 				CC1673C820E13F0700667B3D /* MainTabBarController.swift */,
-				CCA2474520DD01030007B0A1 /* SignUpController.swift */,
 				CCA2474720DD01030007B0A1 /* Main.storyboard */,
 				CCA2474A20DD01050007B0A1 /* Assets.xcassets */,
 				CCA2474C20DD01050007B0A1 /* LaunchScreen.storyboard */,

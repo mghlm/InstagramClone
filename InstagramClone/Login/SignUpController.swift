@@ -66,6 +66,38 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
         return button
     }()
     
+    fileprivate let alreadyHaveAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        let attributedTitle = NSMutableAttributedString(string: "Already have an account? ", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+        attributedTitle.append(NSAttributedString(string: "Sign in", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.rgb(red: 17, green: 154, blue: 237)]))
+        
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addTarget(self, action: #selector(handleAlreadyHaveAccount), for: .touchUpInside)
+        return button
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .white
+        
+        view.addSubview(alreadyHaveAccountButton)
+        alreadyHaveAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        
+        view.addSubview(plusPhotoButton)
+        
+        plusPhotoButton.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 60, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 140, height: 140)
+        plusPhotoButton.anchor(centerX: view.centerXAnchor, centerY: nil)
+        
+        setupInputFields()
+        
+    }
+    
+    @objc func handleAlreadyHaveAccount() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @objc func handlePlusPhoto() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -154,20 +186,6 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
             signUpButton.isEnabled = false 
             signUpButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        
-        view.addSubview(plusPhotoButton)
-        
-        plusPhotoButton.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 60, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 140, height: 140)
-        plusPhotoButton.anchor(centerX: view.centerXAnchor, centerY: nil)
-        
-        setupInputFields()
-        
     }
     
     fileprivate func setupInputFields() {
